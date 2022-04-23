@@ -5,12 +5,12 @@ def test_e1_01(daily_comments_75, missing_views):
 
     to_test = int(daily_comments_75)
 
-    if to_test == 405
+    if to_test == 405:
         grade = grade + 50
 
     to_test_2 = int(missing_views)
 
-    if to_test_2 == 0
+    if to_test_2 == 0:
         grade = grade + 50
 
     if grade == 100:
