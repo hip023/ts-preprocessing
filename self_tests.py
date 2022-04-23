@@ -5,12 +5,12 @@ def test_e1_01(daily_comments_75, missing_views):
 
     to_test = int(daily_comments_75)
 
-    if str(hash(str(to_test)))[:8] == '-8755428':
+    if to_test == 405
         grade = grade + 50
 
     to_test_2 = int(missing_views)
 
-    if str(hash(str(to_test_2)))[:8] == '75683047':
+    if to_test_2 == 0
         grade = grade + 50
 
     if grade == 100:
@@ -19,4 +19,3 @@ def test_e1_01(daily_comments_75, missing_views):
         print("Your grade: 50. Try again!")
     else:
         print("Sorry. your grade is 0. Try again!")
-
