@@ -1,21 +1,41 @@
+import hashlib
+from typing import Union
+
+# If you got here, answers are hashed :) go and do your homework please :) :)
+ANSWERS = {
+    "E1": [b'\x86\x13\x98^\xc4\x9e\xb8\xf7',
+           b'\x1c\xc8\x14_T`\x9cf']
+}
 
 
-def test_e1_01(daily_comments_75, missing_views):
-    grade = 0
+def get_hash(s: Union[str, int]):
+    if not isinstance(s, str):
+        s = str(s)
+    return hashlib.md5(s.encode()).digest()[:8]
 
-    to_test = int(daily_comments_75)
 
-    if to_test == 405:
-        grade = grade + 50
+def test_your_notebook(notebook, *args):
+    if notebook not in ANSWERS.keys():
+        print("Nice try, smarty! Go and Break someone else's code :) ")
+        raise ValueError("YOUR GRADE: 0! ")
 
-    to_test_2 = int(missing_views)
+    answers = ANSWERS.get(notebook)
+    response_hash = [get_hash(a) for a in args]
+    correct_answers = [answers[i] == response_hash[i] for i,_ in enumerate(answers)]
 
-    if to_test_2 == 0:
-        grade = grade + 50
+    grade = int(100 * sum(correct_answers) / len(correct_answers))
 
-    if grade == 100:
-        print("YOU ROCKSTAR!! 100 it is :) ")
-    elif grade == 50:
-        print("Your grade: 50. Try again!")
+    if grade > 93:
+        print(f"You Rockstar! That's an A! Your Final Grade: {grade}")
+    elif grade > 85:
+        print(f"Not Bad! Your Final Grade: {grade}")
+    elif grade > 75:
+        print(f"Nice try, I bet you can do better next time! Your grade: {grade}")
     else:
-        print("Sorry. your grade is 0. Try again!")
+        print(f"We're addicted to excellence here... how about you try again? Your grade: {grade}")
+
+    print("-------------")
+    print("Grade analysis:")
+
+    for i , _ in enumerate(answers):
+        print(f"{args[i]} - {correct_answers[i]}")
