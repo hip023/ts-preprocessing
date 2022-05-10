@@ -3,8 +3,9 @@ from typing import Union
 
 # If you got here, answers are hashed :) go and do your homework please :) :)
 ANSWERS = {
-    "E1": [b'\x86\x13\x98^\xc4\x9e\xb8\xf7',
-           b'\x1c\xc8\x14_T`\x9cf']
+    "E1": [b'\x86\x13\x98^\xc4\x9e\xb8\xf7', b'\x1c\xc8\x14_T`\x9cf', b'\x10\x17\xbf\xd4g9U\xff',
+           b'\xba\xfds"\xc6\xe9}%', b'\x93\xcb\xa0tT\xf0jJ', b'(8\x02:w\x8d\xfa\xec', b'\xc8\x1er\x8d\x9dL/c',
+           b'\x02\xe7O\x10\xe02z\xd8', b'\x08\xed544\x172\x1c']
 }
 
 
@@ -21,7 +22,7 @@ def test_your_notebook(notebook, *args):
 
     answers = ANSWERS.get(notebook)
     response_hash = [get_hash(a) for a in args]
-    correct_answers = [answers[i] == response_hash[i] for i,_ in enumerate(answers)]
+    correct_answers = [answers[i] == response_hash[i] for i, _ in enumerate(answers)]
 
     grade = int(100 * sum(correct_answers) / len(correct_answers))
 
@@ -37,5 +38,5 @@ def test_your_notebook(notebook, *args):
     print("-------------")
     print("Grade analysis:")
 
-    for i , _ in enumerate(answers):
+    for i, _ in enumerate(answers):
         print(f"{args[i]} - {correct_answers[i]}")
