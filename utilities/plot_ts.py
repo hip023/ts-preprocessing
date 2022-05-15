@@ -2,7 +2,7 @@ import matplotlib.dates as mdates
 from matplotlib import pyplot as plt
 from matplotlib.dates import DateFormatter
 
-COLORS = ["purple", "red", "blue", "green"]
+COLORS = ["purple", "red", "blue", "green", "black"]
 
 
 def plot_series(time,
