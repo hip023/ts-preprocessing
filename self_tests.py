@@ -17,7 +17,8 @@ ANSWERS = {
            b'\xba\xfds"\xc6\xe9}%', b'\x93\x87\x14A(\x05\x1bn', b'\xc8\x1er\x8d\x9dL/c', b'\x94\xe0\xb7\t{\xec\xe4\x07',
            b'vB=\x83R\xc9\xe8\xfc', b'\xf7ij\x9b6*\xc5\xa5', b'\xc4\xcaB8\xa0\xb9#\x82', b'\x93\xcb\xa0tT\xf0jJ',
            b'\x93\xcb\xa0tT\xf0jJ', b'\x93\xcb\xa0tT\xf0jJ'],
-    "E7": [b'ZT\x8c/Xu\xf1\x0b']
+    "E7": [b'#\xb9\x98\xb1\x9b_`\xdb'],
+    "E8": [b'#\xb9\x98\xb1\x9b_`\xdb']
 }
 
 
@@ -55,4 +56,4 @@ def test_your_notebook(notebook, *args):
 
 
 print('hi')
-[get_hash(s) for s in ['Yes', 5, 'method']]
+[get_hash(s) for s in ['Dubai']]
