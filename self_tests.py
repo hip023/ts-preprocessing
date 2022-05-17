@@ -55,4 +55,4 @@ def test_your_notebook(notebook, *args):
 
 
 print('hi')
-[get_hash(s) for s in ['No', 'No']]
+[get_hash(s) for s in ['Yes', 5, 'method']]
